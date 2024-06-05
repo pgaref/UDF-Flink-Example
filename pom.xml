@@ -51,7 +51,7 @@
                     <artifactSet>
                         <includes>
                             <!-- Include all UDF dependencies here -->
-                            <include>*:*</include>
+                            <include>com.github.javafaker:javafaker</include>
                         </includes>
                     </artifactSet>
                 </configuration>
