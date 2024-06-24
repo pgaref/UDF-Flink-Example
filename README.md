@@ -58,6 +58,14 @@ AS 'io.confluent.flink.table.modules.remoteudf.DurationToMinutesFunction'
 USING JAR 'confluent-artifact://ccp-ewz1qj/ver-42o21y';
 ```
 
+Specific example for ISO to Minutes UDF:
+
+```
+CREATE FUNCTION ISO_TO_MIN_PANOS 
+AS 'io.confluent.flink.table.modules.remoteudf.DurationToMinutesFunction' 
+USING JAR 'confluent-artifact://ccp-ewz1qj/ver-42o21y';
+```
+
 ```
 CREATE FUNCTION ISO_TO_MIN_PANOS 
 AS 'io.confluent.flink.table.modules.remoteudf.DurationToMinutesFunction' 
