@@ -58,6 +58,25 @@ AS 'io.confluent.flink.table.modules.remoteudf.TShirtSizingIsSmaller'
 USING JAR 'confluent-artifact://pluginid/versionid';
 ```
 
+Specific example for ISO to Minutes UDF:
+
+```
+CREATE FUNCTION ISO_TO_MIN_PANOS 
+AS 'io.confluent.flink.table.modules.remoteudf.DurationToMinutesFunction' 
+USING JAR 'confluent-artifact://ccp-ewz1qj/ver-42o21y';
+```
+
+```
+CREATE FUNCTION ISO_TO_MIN_PANOS 
+AS 'io.confluent.flink.table.modules.remoteudf.DurationToMinutesFunction' 
+USING JAR 'confluent-artifact://ccp-ewz1qj/ver-42o21y';
+```
+
+```
+select ISO_TO_MIN_PANOS(`duration`) from (values 'P1D', 'P5D') as duration (duration);
+```
+
+
 NOTE: Replace the class with your actual class that contains the eval function.
 
 Now that the UDF is successfully registered, you can utilize the command below to display a list of all UDF functions:
