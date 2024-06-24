@@ -53,10 +53,21 @@ confluent flink artifact list
 Once you've uploaded the JAR using the CLI, proceed to the Flink SQL editor to register the UDF within your specific Flink workspace with the following command.
 
 ```
-CREATE FUNCTION UDF_NAME 
-AS 'io.confluent.flink.table.modules.remoteudf.TShirtSizingIsSmaller' 
-USING JAR 'confluent-artifact://pluginid/versionid';
+CREATE FUNCTION ISO_TO_MIN_PANOS 
+AS 'io.confluent.flink.table.modules.remoteudf.DurationToMinutesFunction' 
+USING JAR 'confluent-artifact://ccp-ewz1qj/ver-42o21y';
 ```
+
+```
+CREATE FUNCTION ISO_TO_MIN_PANOS 
+AS 'io.confluent.flink.table.modules.remoteudf.DurationToMinutesFunction' 
+USING JAR 'confluent-artifact://ccp-ewz1qj/ver-42o21y';
+```
+
+```
+select ISO_TO_MIN_PANOS(`duration`) from (values 'P1D', 'P5D') as duration (duration);
+```
+
 
 NOTE: Replace the class with your actual class that contains the eval function.
 
